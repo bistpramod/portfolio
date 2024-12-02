@@ -1,62 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pramod Bist | Portfolio</title>
+    <link href='https://fonts.googleapis.com/css?family=Baloo Bhai' rel='stylesheet'>
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <h1>Pramod Bist</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header">
 
-    <main>
-        <section id="hero">
-            <h2>Hello, I'm Pramod Bist</h2>
-            <p>A passionate frontend developer crafting beautiful web experiences.</p>
-            <button onclick="scrollToSection('projects')">View My Work</button>
-        </section>
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo">
+                <ul id="sideBar">
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I specialize in creating user-friendly and visually appealing websites using modern tools and technologies. I’m constantly learning and improving to deliver the best solutions for my clients.</p>
-        </section>
+                    <li>
+                        <a href="#header">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#colourr">Services</a>
+                    </li>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>A responsive website built with HTML, CSS, and JavaScript.</p>
+                    <li>
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <i class="fa-solid fa-square-xmark" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+            </nav>
+            <div class="typewriter">
+
+
+                <div class="contains">
+                    <h1>Hi, I'm <span>Pramod Bist</span></h1>
+                    <span class="type writer">I'm </span>
+                    <span class="type twriter ">a Coder </span>
+                </div>
+                <img class="lap" src="finallaptop.png" alt="">
+
             </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>An interactive web application showcasing dynamic content updates.</p>
+
+
+        </div>
+
+    </div>
+    </div>
+    <div id="about">
+        <div class="box">
+            <div class="row">
+                <div class="onec">
+
+                    <span>
+                        <h1 class="titlex">About Me</h1>
+                    </span>
+                    <p class="loremm">Hello, I'm Pramod. I am a student at Tribhuvan University.
+
+                    </p>
+
+                </div>
+                <div class="twoc">
+                    <div class="tabs">
+                        <p class="links activeone" onclick="openTab('skills')">Skills</p>
+                        <p class="links" onclick="openTab('education')">Education</p>
+                        <p class="links" onclick="openTab('experience')">Experience</p>
+                    </div>
+                    <div class="tabContains tabshow" id="skills">
+                        <ul>
+                            <li><span>Web development</span><br>Creating the Frontend of the web application</li>
+                            <li><span>Animation</span><br>2D Animation and Character Animation</li>
+                            <li><span>C/C++</span><br></li>
+
+                        </ul>
+                    </div>
+                    <div class="tabContains" id="education">
+                        <ul>
+                            <li><span>freeCodeCamp</span><br>Gained Knowledge and Experience of HTML,CSS and JavaScript
+                                at freeCodeCamp</li>
+                            <li><span>Online Sources and Self Taught</span><br>Self Taught 2D Animator as well as
+                                Learned from Internet</li>
+                            <li><span>C/C++</span><br>Learned C and C++ At Tribhuvan University</li>
+
+                        </ul>
+                    </div>
+                    <div class="tabContains" id="experience">
+                        <ul>
+                            <li><span></span><br></span>Six Months Of Experience in HTML,CSS and JS</li>
+                            <li><span></span><br>More Than Eight Months of Experience In 2D Animation</li>
+                            <li><span></span>Have a Good Knowledge About C/C++</li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>A sleek portfolio site featuring animations and clean design.</p>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- The about section is ended here  -->
+
+
+    <div id="colourr">
+        <div class="services">
+            <div class="container">
+                <h1 class="serviceTitle"><span>Services</span></h1>
+                <div class="servicesList">
+                    <div>
+                        <h2>Frontend Development</h2>
+                        <P>I am a passionate developer and  I specialize in crafting responsive, user-friendly interfaces using modern web technologies like HTML, CSS, and JavaScript </P>
+                    </div>
+                    <div>
+                        <h2>2D Animation</h2>
+
+                        <p>As an animator, I create captivating 2D animations that add life to digital projects.</p>
+                    </div>
+                </div>
+                </h1>
             </div>
-        </section>
+        </div>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Want to work together? Reach out to me at:</p>
-            <a href="mailto:pramodbist@example.com">pramodbist@example.com</a>
-        </section>
-    </main>
+    </div>
+    <!-- service section ends here -->
 
-    <footer>
-        <p>&copy; 2024 Pramod Bist. All rights reserved.</p>
-    </footer>
 
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="portfolio">
+                My Work
+            </h1>
+            <div class="portfolios">
+                <div class="work">
+                    <img src="rock (3).jpg" alt="">
+                    <div class="layer">
+                        <h3>A Weather App</h3>
+                        <p>It is a real time weather info web app</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img class="q" src="rock (2).jpg" alt="">
+                    <div class="layer">
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive web Portfolio</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img class="r" src="caclulator2.png" alt="">
+                    <div class="layer">
+                        <h3>A Calculator App</h3>
+                        <p>A fully functional calculator app</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <!-- portfolio secrtion ends here -->
+
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contactLeft">
+                    <h1 class="titlex">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> gmail@bistpramod.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9848979255</p>
+                    <div class="icons">
+                        <a href="https://www.facebook.com/pramod.bist.92"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/pramod-bist-a96a032a7/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/bistpramod113"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="https://www.instagram.com/pramod_bist__113/"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                    <a href="" download class="cv btn">Download CV</a>
+                </div>
+                <div class="contactRight">
+                    <form>
+                        <input type="text" name="name" placeholder="Enter Your Name" required>
+                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                        <textarea name="message" placeholder="Enter Your Message" cols="5"></textarea>
+                        <button type="submit" class=" btn1 btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">Copyright © 2024. All rights reserved.</div>
+    </div>
+
+    <script> // this script for the typewriter effect
+        const text = document.querySelector(".twriter");
+        const textLoad = () => {
+            setTimeout(() => {
+                text.textContent = "a Coder";
+            }, 0);
+            setTimeout(() => {
+                text.textContent = "a Frontend Developer";
+            }, 2000);
+            setTimeout(() => {
+                text.textContent = " an Animator";
+            }, 4000);
+            
+        }
+        textLoad();
+        setInterval(textLoad, 6000)
+    </script>
+    <script src="https://kit.fontawesome.com/a8f748d180.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
+
 </html>
