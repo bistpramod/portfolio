@@ -180,7 +180,7 @@ nav ul li a:hover::after {
 .onec {
     flex-basis: 35%;
     padding: 20px;
-
+    color:grey;
 
 
 }
@@ -648,3 +648,4 @@ nav{
     width: 115%;
 }
 }
+
