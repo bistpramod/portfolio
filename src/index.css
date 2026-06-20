@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0efff;
+  --color-brand-100: #e0deff;
+  --color-brand-200: #c4c0ff;
+  --color-brand-300: #a09aff;
+  --color-brand-400: #7b73f5;
+  --color-brand-500: #5e57e4;
+  --color-brand-600: #4d46cf;
+  --color-brand-700: #3d37a8;
+  --color-brand-800: #2f2b82;
+  --color-brand-900: #221f5c;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0a0a0f;
+  color: #e4e4e7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-brand-500);
+  color: white;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  color: var(--color-brand-400);
+  margin-left: 2px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7b73f5, #5e57e4, #a09aff);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(94, 87, 228, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 87, 228, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
