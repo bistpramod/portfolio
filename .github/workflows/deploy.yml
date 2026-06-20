@@ -1,50 +1,44 @@
-name: Deploy to GitHub Pages
+# This runs automatically every time you push to the main branch.
+# GitHub builds your React app into plain HTML/JS/CSS, then publishes
+# those finished files — so visitors never download raw .tsx source code.
+
+name: Deploy site to GitHub Pages
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  workflow_dispatch: # lets you re-deploy manually from the Actions tab
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write # needed so the action can push the built site to gh-pages
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      # Grab your latest code from GitHub
+      - name: Grab the code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # Install Node.js (same as running npm on your laptop)
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
+      # Download all the packages listed in package.json
+      - name: Install packages
         run: npm ci
 
-      - name: Build
+      # Turn React/TypeScript into normal files browsers understand
+      - name: Build the site
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Upload the built site to the gh-pages branch
+      # GitHub Pages then serves THOSE files — not the raw src/ folder
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
