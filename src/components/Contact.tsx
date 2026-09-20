@@ -142,7 +142,7 @@ export default function Contact() {
 
       <footer className="mt-16 border-t border-white/5 py-6 text-center text-sm text-zinc-500">
         Copyright &copy; {new Date().getFullYear()} {siteConfig.name}. All
-        rights reserved.
+        rights reserved -- Updated 2026
       </footer>
     </section>
   );
