@@ -36,8 +36,8 @@ export default function About() {
               {siteConfig.about}
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
-              <StatCard value="6+" label="Months Web Dev" />
-              <StatCard value="8+" label="Months Animation" />
+              <StatCard value="15+" label="months Web Dev" />
+              <StatCard value="1+" label="Years Animation" />
             </div>
           </div>
 
