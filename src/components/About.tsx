@@ -1,114 +1,50 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import {
-  siteConfig,
-  skills,
-  education,
-  experience,
-} from "../data/content";
-import type { TabItem } from "../data/content";
-
-type TabKey = "skills" | "education" | "experience";
-
-const tabs: { key: TabKey; label: string; items: TabItem[] }[] = [
-  { key: "skills", label: "Skills", items: skills },
-  { key: "education", label: "Education", items: education },
-  { key: "experience", label: "Experience", items: experience },
-];
+import { education, siteConfig } from "../data/content";
 
 export default function About() {
-  const [activeTab, setActiveTab] = useState<TabKey>("skills");
-  const currentItems = tabs.find((t) => t.key === activeTab)?.items ?? [];
-
   return (
-    <section id="about" className="relative py-24">
-      <div className="mx-auto max-w-6xl px-4">
+    <section id="about" className="section-block about-section">
+      <div className="section-shell about-layout">
+        <div>
+          <p className="section-index">03 / About</p>
+          <h2>Curious about how the whole product works.</h2>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          className="about-copy"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="grid gap-12 md:grid-cols-5"
+          transition={{ duration: 0.55 }}
         >
-          <div className="md:col-span-2">
-            <SectionLabel>About Me</SectionLabel>
-            <p className="mt-6 text-base leading-relaxed text-zinc-400">
-              {siteConfig.about}
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <StatCard value="15+" label="months Web Dev" />
-              <StatCard value="1+" label="Years Animation" />
-            </div>
-          </div>
+          <p className="about-lead">
+            I started with frontend development and kept following the questions
+            behind the screen: where the data comes from, how access is controlled,
+            why a page is fast—or why nobody can find it.
+          </p>
+          <p>
+            That curiosity now takes me through UI work, backend architecture,
+            authentication, realtime features and technical SEO. I learn best by
+            making complete projects, testing the rough edges and documenting what
+            I understand along the way.
+          </p>
+          <p>
+            I’m currently based in {siteConfig.location} and looking for a place
+            where I can contribute as a junior developer while continuing to grow
+            around experienced engineers.
+          </p>
 
-          <div className="md:col-span-3">
-            <div className="flex gap-6 border-b border-white/10 pb-1">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  type="button"
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`relative pb-3 text-sm font-medium transition sm:text-base ${
-                    activeTab === tab.key
-                      ? "text-white"
-                      : "text-zinc-500 hover:text-zinc-300"
-                  }`}
-                >
-                  {tab.label}
-                  {activeTab === tab.key && (
-                    <motion.span
-                      layoutId="tab-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-500"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            <motion.ul
-              key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-8 space-y-5"
-            >
-              {currentItems.map((item) => (
-                <li
-                  key={item.title}
-                  className="group rounded-xl border border-white/5 bg-zinc-900/50 p-5 transition hover:border-brand-500/30 hover:bg-zinc-900/80"
-                >
-                  <h3 className="font-semibold text-brand-300 group-hover:text-brand-200">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">
-                    {item.description}
-                  </p>
-                </li>
-              ))}
-            </motion.ul>
+          <div className="education-list">
+            <p className="note-label">Education & training</p>
+            {education.map((item, index) => (
+              <div className="education-row" key={item.title}>
+                <span>0{index + 1}</span>
+                <div><h3>{item.title}</h3><p>{item.place}</p></div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
     </section>
-  );
-}
-
-import type { ReactNode } from "react";
-
-function SectionLabel({ children }: { children: ReactNode }) {
-  return (
-    <h2 className="inline-block rounded-2xl bg-brand-600 px-5 py-2 text-lg font-bold text-white">
-      {children}
-    </h2>
-  );
-}
-
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-xl border border-white/5 bg-zinc-900/50 p-4 text-center">
-      <p className="text-2xl font-bold text-brand-400">{value}</p>
-      <p className="mt-1 text-xs text-zinc-500">{label}</p>
-    </div>
   );
 }

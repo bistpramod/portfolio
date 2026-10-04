@@ -1,58 +1,71 @@
+import { Braces, Database, Search, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Code2, Film } from "lucide-react";
-import { services } from "../data/content";
+import { capabilities, seoLearning } from "../data/content";
 
 const iconMap = {
-  code: Code2,
-  film: Film,
+  frontend: Braces,
+  backend: Database,
+  search: Search,
 };
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24">
-      <div className="glow-orb left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-brand-600/10" />
+    <section id="services" className="section-block skills-section">
+      <div className="section-shell">
+        <div className="section-heading">
+          <div>
+            <p className="section-index">02 / Capabilities</p>
+            <h2>Comfortable across the stack.</h2>
+          </div>
+          <p>
+            I like understanding the full path: what a person sees, what the API
+            decides and how the data is stored.
+          </p>
+        </div>
 
-      <div className="relative mx-auto max-w-6xl px-4">
+        <div className="capability-grid">
+          {capabilities.map((capability, index) => {
+            const Icon = iconMap[capability.icon];
+            return (
+              <motion.article
+                className="capability-card"
+                key={capability.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                <div className="capability-number">0{index + 1}</div>
+                <Icon size={22} />
+                <h3>{capability.title}</h3>
+                <p>{capability.description}</p>
+                <div className="skill-list">
+                  {capability.details.map((detail) => <span key={detail}>{detail}</span>)}
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          className="seo-note"
+          initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
         >
-          <h2 className="inline-block rounded-xl border-2 border-brand-600 px-4 py-1 text-2xl font-bold text-brand-400">
-            Services
-          </h2>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {services.map((service, i) => {
-              const Icon = iconMap[service.icon as keyof typeof iconMap] ?? Code2;
-
-              return (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.15 }}
-                  whileHover={{ y: -8 }}
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-zinc-900/60 p-8 transition hover:border-brand-500/40 hover:shadow-xl hover:shadow-brand-900/20"
-                >
-                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-600/10 transition group-hover:bg-brand-600/20" />
-
-                  <div className="relative">
-                    <div className="mb-5 inline-flex rounded-xl bg-brand-600/20 p-3 text-brand-300">
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-                      {service.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="seo-copy">
+            <p className="note-label">SEO practice log</p>
+            <h3>{seoLearning.title}</h3>
+            <p>{seoLearning.description}</p>
+            <a href={seoLearning.videoUrl} target="_blank" rel="noreferrer">
+              Course reference <ArrowUpRight size={15} />
+            </a>
+          </div>
+          <div className="seo-topics">
+            {seoLearning.topics.map((topic, index) => (
+              <div key={topic}><span>0{index + 1}</span><p>{topic}</p></div>
+            ))}
           </div>
         </motion.div>
       </div>

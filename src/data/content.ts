@@ -3,137 +3,179 @@ export interface NavLink {
   href: string;
 }
 
-export interface TabItem {
+export interface Capability {
   title: string;
   description: string;
-}
-
-export interface Service {
-  title: string;
-  description: string;
-  icon: string;
+  details: string[];
+  icon: "frontend" | "backend" | "search";
 }
 
 export interface Project {
+  number: string;
   title: string;
+  category: string;
   description: string;
-  image: string;
+  highlights: string[];
   tags: string[];
-  link?: string;
+  visual: "atlas" | "townchart" | "annapurna" | "commerce";
+  liveUrl?: string;
+  sourceUrl?: string;
+  status: "Live" | "In development";
 }
 
 export interface SocialLink {
   label: string;
   href: string;
-  icon: "facebook" | "linkedin" | "twitter" | "instagram";
+  icon: "github" | "linkedin" | "facebook" | "instagram";
 }
 
 export const siteConfig = {
   name: "Pramod Bist",
-  title: "Frontend Developer & Animator",
-  email: "mail@bistpramod.com.np",
-  phone: "9848979255",
+  initials: "PB",
+  title: "Full-stack developer",
+  email: "bistpramod113@gmail.com",
+  phone: "+977 984-897-9255",
+  location: "Bhaktapur, Nepal",
+  github: "https://github.com/bistpramod",
   about:
-    "Hello, I'm Pramod. I am a student at Tribhuvan University with a passion for building beautiful web experiences and creating captivating 2D animations.",
-  typewriterRoles: ["a Coder", "a Frontend Developer", "an Animator"],
+    "I’m a BSc. CSIT student and full-stack developer focused on turning practical ideas into dependable web products. I work across React interfaces, Express APIs, MongoDB data models and the details that make a site useful after it ships.",
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#home" },
+  { label: "Work", href: "#portfolio" },
+  { label: "Skills", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const skills: TabItem[] = [
+export const capabilities: Capability[] = [
   {
-    title: "Web Development",
-    description: "Creating the frontend of web applications with modern tools.",
-  },
-  {
-    title: "Animation",
-    description: "2D animation and character animation for digital projects.",
-  },
-  {
-    title: "C/C++",
-    description: "Systems programming and problem solving with C and C++.",
-  },
-];
-
-export const education: TabItem[] = [
-  {
-    title: "freeCodeCamp",
+    title: "Frontend systems",
     description:
-      "Gained knowledge and experience of HTML, CSS and JavaScript at freeCodeCamp.",
+      "Responsive product interfaces with a clear information hierarchy and reusable components.",
+    details: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite"],
+    icon: "frontend",
   },
   {
-    title: "Online Sources & Self Taught",
+    title: "Backend & data",
     description:
-      "Self-taught 2D animator, learned from internet resources and practice.",
+      "REST APIs, authentication and data models designed around real application rules.",
+    details: ["Node.js", "Express", "MongoDB", "Mongoose", "JWT", "Socket.IO"],
+    icon: "backend",
   },
   {
-    title: "C/C++",
-    description: "Learned C and C++ at Tribhuvan University.",
-  },
-];
-
-export const experience: TabItem[] = [
-  {
-    title: "Web Development",
-    description: "Six months of experience in HTML, CSS and JavaScript.",
-  },
-  {
-    title: "2D Animation",
-    description: "More than eight months of experience in 2D animation.",
-  },
-  {
-    title: "C/C++",
-    description: "Solid knowledge of C/C++ programming fundamentals.",
-  },
-];
-
-export const services: Service[] = [
-  {
-    title: "Frontend Development",
+    title: "SEO & discoverability",
     description:
-      "I specialize in crafting responsive, user-friendly interfaces using modern web technologies like React, TypeScript, HTML, CSS, and JavaScript.",
-    icon: "code",
-  },
-  {
-    title: "2D Animation",
-    description:
-      "As an animator, I create captivating 2D animations that add life to digital projects, from character motion to UI micro-interactions.",
-    icon: "film",
+      "Actively studying and applying search fundamentals through a live, server-rendered practice project.",
+    details: [
+      "Crawl & indexation",
+      "Search intent",
+      "On-page SEO",
+      "Structured data",
+      "Core Web Vitals",
+      "AI search basics",
+    ],
+    icon: "search",
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Weather App",
-    description: "Real-time weather info web app with clean UI and live data.",
-    image: "/rock (3).jpg",
-    tags: ["HTML", "CSS", "JavaScript", "API"],
+    number: "01",
+    title: "DevTool Atlas",
+    category: "Next.js · Developer tools · SEO practice",
+    description:
+      "A growing collection of focused, browser-based tools for everyday development work. The first release includes a JSON formatter, JWT decoder and regex tester, with user data processed locally in the browser.",
+    highlights: [
+      "Server-rendered, indexable pages with route-level metadata",
+      "Robots and sitemap routes built into the Next.js app",
+      "Deployed on Vercel as an ongoing practical SEO lab",
+    ],
+    tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
+    visual: "atlas",
+    liveUrl: "https://optimization-inky.vercel.app",
+    sourceUrl: "https://github.com/bistpramod/devtool-atlas",
+    status: "Live",
   },
   {
-    title: "Portfolio Website",
-    description: "A responsive personal portfolio built with modern web tech.",
-    image: "/rock (2).jpg",
-    tags: ["React", "TypeScript", "Tailwind"],
+    number: "02",
+    title: "TownChart",
+    category: "Full-stack MERN · Realtime community platform",
+    description:
+      "A place-first application for seeing what is happening in a Nepal town right now—combining timely community updates, local questions, events, live weather and real map data.",
+    highlights: [
+      "10,000+ Nepal places with OpenStreetMap and Open-Meteo data",
+      "Realtime town rooms and notifications with Socket.IO",
+      "JWT auth, role-based moderation and community Pulse voting",
+    ],
+    tags: ["React", "TypeScript", "Express", "MongoDB", "Socket.IO", "Leaflet"],
+    visual: "townchart",
+    status: "In development",
   },
   {
-    title: "Calculator App",
-    description: "A fully functional calculator with a polished interface.",
-    image: "/caclulator2.png",
-    tags: ["JavaScript", "CSS"],
+    number: "03",
+    title: "Hotel Annapurna",
+    category: "MERN · Hotel reservation system",
+    description:
+      "A complete hotel website and reservation system for guests and staff, with availability-aware booking flows and an operational admin workspace.",
+    highlights: [
+      "Date-based room availability and server-calculated pricing",
+      "Guest bookings, cancellation rules and status history",
+      "Admin tools for rooms, reservations, users, gallery and messages",
+    ],
+    tags: ["React", "Express", "MongoDB", "HttpOnly JWT", "Cloudinary"],
+    visual: "annapurna",
+    status: "In development",
+  },
+  {
+    number: "04",
+    title: "eCommerce Store",
+    category: "Full-stack MERN · Commerce",
+    description:
+      "A full-stack storefront with customer authentication, a searchable product catalogue and an admin workflow for managing inventory.",
+    highlights: [
+      "JWT signup and login with bcrypt password hashing",
+      "Product CRUD, search and category filtering",
+      "Admin interfaces for adding, editing and removing products",
+    ],
+    tags: ["React", "Tailwind CSS", "Express", "MongoDB", "JWT"],
+    visual: "commerce",
+    sourceUrl: "https://github.com/bistpramod/eCommerceStore-fullstack",
+    status: "In development",
   },
 ];
 
+export const education = [
+  {
+    title: "BSc. Computer Science & IT (CSIT)",
+    place: "Bhaktapur Multiple Campus · Tribhuvan University",
+  },
+  {
+    title: "Advanced MERN Stack Development",
+    place: "Broadway Infosys · Training & certification",
+  },
+];
+
+export const seoLearning = {
+  title: "Learning SEO by building, not only reading.",
+  description:
+    "My current study covers the full search lifecycle—from crawling and indexation to intent, site architecture, performance, structured data, measurement and AI search. DevTool Atlas is where I turn that theory into working pages and measurable experiments.",
+  topics: [
+    "Technical audits",
+    "React / JavaScript SEO",
+    "Keyword-to-page mapping",
+    "Search Console & GA4",
+    "Ecommerce SEO",
+    "AEO / GEO fundamentals",
+  ],
+  videoUrl: "https://www.youtube.com/watch?v=7DRO4rEIHDk",
+};
+
 export const socialLinks: SocialLink[] = [
   {
-    label: "Facebook",
-    href: "https://www.facebook.com/pramod.bist.92",
-    icon: "facebook",
+    label: "GitHub",
+    href: "https://github.com/bistpramod",
+    icon: "github",
   },
   {
     label: "LinkedIn",
@@ -141,9 +183,9 @@ export const socialLinks: SocialLink[] = [
     icon: "linkedin",
   },
   {
-    label: "Twitter",
-    href: "https://x.com/bistpramod113",
-    icon: "twitter",
+    label: "Facebook",
+    href: "https://www.facebook.com/pramod.bist.92",
+    icon: "facebook",
   },
   {
     label: "Instagram",
