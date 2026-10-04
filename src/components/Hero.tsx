@@ -4,8 +4,8 @@ import { siteConfig } from "../data/content";
 
 const notes = [
   ["01", "Building useful MERN products"],
-  ["02", "Practising technical SEO"],
-  ["03", "Open to junior developer roles"],
+  ["02", "Upskilling SEO"],
+  ["03", "Exploring"],
 ];
 
 export default function Hero() {
