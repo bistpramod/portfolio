@@ -968,16 +968,29 @@ a:focus-visible {
   line-height: 1.7;
 }
 
+.study-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .seo-copy a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin-top: 28px;
   padding-bottom: 3px;
   border-bottom: 1px solid #ff7a5e;
   color: #ff7a5e;
   font-size: 13px;
   font-weight: 700;
+}
+
+.study-sources span {
+  color: #9e98ac;
+  font-family: var(--font-mono);
+  font-size: 10px;
 }
 
 .seo-topics {

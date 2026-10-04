@@ -7,7 +7,9 @@ const sectionIds = ["home", "portfolio", "services", "about", "contact"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark"),
+  );
   const activeSection = useScrollSpy(sectionIds);
 
   useEffect(() => {
@@ -15,6 +17,9 @@ export default function Navbar() {
     const shouldUseDark = savedTheme === "dark";
     setIsDark(shouldUseDark);
     document.documentElement.classList.toggle("dark", shouldUseDark);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", shouldUseDark ? "#100e17" : "#ffffff");
   }, []);
 
   const toggleTheme = () => {
@@ -22,6 +27,9 @@ export default function Navbar() {
     setIsDark(nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme);
     window.localStorage.setItem("portfolio-theme", nextTheme ? "dark" : "light");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", nextTheme ? "#100e17" : "#ffffff");
   };
 
   return (

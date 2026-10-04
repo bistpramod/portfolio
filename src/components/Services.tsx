@@ -58,9 +58,12 @@ export default function Services() {
             <p className="note-label">SEO practice log</p>
             <h3>{seoLearning.title}</h3>
             <p>{seoLearning.description}</p>
-            <a href={seoLearning.videoUrl} target="_blank" rel="noreferrer">
-              Course reference <ArrowUpRight size={15} />
-            </a>
+            <div className="study-sources">
+              <a href={seoLearning.videoUrl} target="_blank" rel="noreferrer">
+                2026 video course <ArrowUpRight size={15} />
+              </a>
+              <span>+ developer-focused SEO manual</span>
+            </div>
           </div>
           <div className="seo-topics">
             {seoLearning.topics.map((topic, index) => (
