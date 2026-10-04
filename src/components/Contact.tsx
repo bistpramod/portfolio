@@ -46,7 +46,7 @@ export default function Contact() {
 
       <footer className="section-shell site-footer">
         <a href="#home" className="wordmark">{siteConfig.name}<span>.</span></a>
-        <p>Built with care in Nepal.</p>
+        <p>I love the Art</p>
         <div className="social-links">
           {socialLinks.map((link) => {
             const Icon = socialIconMap[link.icon];
