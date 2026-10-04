@@ -20,7 +20,7 @@ export default function About() {
           <p className="about-lead">
             I started with frontend development and kept following the questions
             behind the screen: where the data comes from, how access is controlled,
-            why a page is fast—or why nobody can find it.
+            why a page is fast or why nobody can find it.
           </p>
           <p>
             That curiosity now takes me through UI work, backend architecture,
@@ -30,8 +30,8 @@ export default function About() {
           </p>
           <p>
             I’m currently based in {siteConfig.location} and looking for a place
-            where I can contribute as a junior developer while continuing to grow
-            around experienced engineers.
+            where I can contribute while continuing to grow.
+            
           </p>
 
           <div className="education-list">
