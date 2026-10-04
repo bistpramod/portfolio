@@ -82,23 +82,6 @@ export const capabilities: Capability[] = [
 export const projects: Project[] = [
   {
     number: "01",
-    title: "DevTool Atlas",
-    category: "Next.js · Developer tools · SEO practice",
-    description:
-      "A growing collection of focused, browser-based tools for everyday development work. The first release includes a JSON formatter, JWT decoder and regex tester, with user data processed locally in the browser.",
-    highlights: [
-      "Server-rendered, indexable pages with route-level metadata",
-      "Robots and sitemap routes built into the Next.js app",
-      "Deployed on Vercel as an ongoing practical SEO lab",
-    ],
-    tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
-    visual: "atlas",
-    liveUrl: "https://devtool-atlas.vercel.app",
-    sourceUrl: "https://github.com/bistpramod/devtool-atlas",
-    status: "Live",
-  },
-  {
-    number: "02",
     title: "TownChart",
     category: "Full-stack MERN · Realtime community platform",
     description:
@@ -113,7 +96,7 @@ export const projects: Project[] = [
     status: "In development",
   },
   {
-    number: "03",
+    number: "02",
     title: "Hotel Annapurna",
     category: "MERN · Hotel reservation system",
     description:
@@ -126,6 +109,23 @@ export const projects: Project[] = [
     tags: ["React", "Express", "MongoDB", "HttpOnly JWT", "Cloudinary"],
     visual: "annapurna",
     status: "In development",
+  },
+  {
+    number: "03",
+    title: "DevTool Atlas",
+    category: "Next.js · Developer tools · Search foundations",
+    description:
+      "A growing collection of focused, browser-based tools for everyday development work. The first release includes a JSON formatter, JWT decoder and regex tester, with user data processed locally in the browser.",
+    highlights: [
+      "Server-rendered, indexable pages with route-level metadata",
+      "Robots and sitemap routes built into the Next.js app",
+      "Deployed on Vercel with a crawlable, performance-focused structure",
+    ],
+    tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
+    visual: "atlas",
+    liveUrl: "https://devtool-atlas.vercel.app",
+    sourceUrl: "https://github.com/bistpramod/devtool-atlas",
+    status: "Live",
   },
   {
     number: "04",
@@ -157,9 +157,9 @@ export const education = [
 ];
 
 export const seoLearning = {
-  title: "Learning SEO by building, not only reading.",
+  title: "Search-aware development.",
   description:
-    "My current study covers the full search lifecycle—from crawling and indexation to intent, site architecture, performance, structured data, measurement and AI search. DevTool Atlas is where I turn that theory into working pages and measurable experiments.",
+    "I consider discoverability as part of the build—from crawlable page structure and meaningful metadata to performance, structured data and measurement. The goal is to create sites that work clearly for people and search systems alike.",
   topics: [
     "Technical audits",
     "React / JavaScript SEO",
@@ -168,7 +168,6 @@ export const seoLearning = {
     "Ecommerce SEO",
     "AEO / GEO fundamentals",
   ],
-  videoUrl: "https://www.youtube.com/watch?v=7DRO4rEIHDk",
 };
 
 export const socialLinks: SocialLink[] = [
