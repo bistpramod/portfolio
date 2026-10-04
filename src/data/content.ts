@@ -93,7 +93,7 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
     visual: "atlas",
-    liveUrl: "https://optimization-inky.vercel.app",
+    liveUrl: "https://devtool-atlas.vercel.app",
     sourceUrl: "https://github.com/bistpramod/devtool-atlas",
     status: "Live",
   },
