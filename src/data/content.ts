@@ -140,8 +140,9 @@ export const projects: Project[] = [
     ],
     tags: ["React", "Tailwind CSS", "Express", "MongoDB", "JWT"],
     visual: "commerce",
+    liveUrl: "https://vividvistaa-store.onrender.com/",
     sourceUrl: "https://github.com/bistpramod/eCommerceStore-fullstack",
-    status: "In development",
+    status: "Live",
   },
 ];
 
