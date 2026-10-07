@@ -112,23 +112,6 @@ export const projects: Project[] = [
   },
   {
     number: "03",
-    title: "DevTool Atlas",
-    category: "Next.js · Developer tools · Search foundations",
-    description:
-      "A growing collection of focused, browser-based tools for everyday development work. The first release includes a JSON formatter, JWT decoder and regex tester, with user data processed locally in the browser.",
-    highlights: [
-      "Server-rendered, indexable pages with route-level metadata",
-      "Robots and sitemap routes built into the Next.js app",
-      "Deployed on Vercel with a crawlable, performance-focused structure",
-    ],
-    tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
-    visual: "atlas",
-    liveUrl: "https://devtool-atlas.vercel.app",
-    sourceUrl: "https://github.com/bistpramod/devtool-atlas",
-    status: "Live",
-  },
-  {
-    number: "04",
     title: "eCommerce Store",
     category: "Full-stack MERN · Commerce",
     description:
@@ -142,6 +125,23 @@ export const projects: Project[] = [
     visual: "commerce",
     liveUrl: "https://vividvistaa-store.onrender.com/",
     sourceUrl: "https://github.com/bistpramod/eCommerceStore-fullstack",
+    status: "Live",
+  },
+  {
+    number: "04",
+    title: "DevTool Atlas",
+    category: "Next.js · Developer tools · Search foundations",
+    description:
+      "A growing collection of focused, browser-based tools for everyday development work. The first release includes a JSON formatter, JWT decoder and regex tester, with user data processed locally in the browser.",
+    highlights: [
+      "Server-rendered, indexable pages with route-level metadata",
+      "Robots and sitemap routes built into the Next.js app",
+      "Deployed on Vercel with a crawlable, performance-focused structure",
+    ],
+    tags: ["Next.js", "TypeScript", "React", "Technical SEO", "Vercel"],
+    visual: "atlas",
+    liveUrl: "https://devtool-atlas.vercel.app",
+    sourceUrl: "https://github.com/bistpramod/devtool-atlas",
     status: "Live",
   },
 ];
