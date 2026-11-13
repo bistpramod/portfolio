@@ -1130,6 +1130,14 @@ a:focus-visible {
 .site-footer > p { margin: 0; font-size: 12px; }
 .site-footer > p:last-child { margin-left: auto; }
 
+.growthlabs-credit a {
+  transition: color 180ms ease;
+}
+
+.growthlabs-credit a:hover {
+  color: #ff7a5e;
+}
+
 .social-links {
   display: flex;
   gap: 8px;
@@ -1211,6 +1219,7 @@ a:focus-visible {
   .contact-email { max-width: 100%; font-size: 16px; overflow-wrap: anywhere; }
   .site-footer { flex-wrap: wrap; gap: 16px; }
   .site-footer > p:nth-child(2) { width: calc(100% - 150px); }
+  .growthlabs-credit { width: 100%; }
   .social-links { order: 4; width: 100%; margin: 5px 0 0; }
   .site-footer > p:last-child { margin-left: auto; }
 }

@@ -47,6 +47,11 @@ export default function Contact() {
       <footer className="section-shell site-footer">
         <a href="#home" className="wordmark">{siteConfig.name}<span>.</span></a>
         <p>I love the Art</p>
+        <p className="growthlabs-credit">
+          <a href="https://neurerohan.com.np/" target="_blank" rel="noopener noreferrer">
+            With GrowthLabs - Best Digital Marketing in Nepal
+          </a>
+        </p>
         <div className="social-links">
           {socialLinks.map((link) => {
             const Icon = socialIconMap[link.icon];
