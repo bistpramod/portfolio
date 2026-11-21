@@ -1,21 +1,22 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
+import { MotionConfig } from "framer-motion";
 import Contact from "./components/Contact";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Expertise from "./components/Expertise";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Navbar />
       <main>
         <Hero />
-        <Portfolio />
-        <Services />
-        <About />
+        <Experience />
+        <Expertise />
+        <Education />
         <Contact />
       </main>
-    </>
+    </MotionConfig>
   );
 }

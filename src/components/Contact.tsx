@@ -1,17 +1,10 @@
-import { ArrowUpRight, Facebook, Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import { siteConfig, socialLinks } from "../data/content";
-
-const socialIconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  facebook: Facebook,
-  instagram: Instagram,
-};
+import { siteConfig } from "../data/content";
 
 export default function Contact() {
   return (
-    <section id="contact" className="contact-section">
+    <section className="contact" id="contact">
       <motion.div
         className="section-shell contact-panel"
         initial={{ opacity: 0, y: 28 }}
@@ -20,48 +13,52 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
       >
         <div className="contact-copy">
-          <p className="section-index">04 / Contact</p>
-          <h2>Have a role, project or useful idea?</h2>
+          <p className="section-kicker">Let&apos;s connect</p>
+          <h2>Need a marketer who sees beyond the click?</h2>
           <p>
-            I’m open to junior full-stack opportunities, internships and practical
-            projects where I can build, learn and be useful.
+            I&apos;m open to digital marketing opportunities where thoughtful
+            execution, clean measurement and continuous improvement matter.
           </p>
-          <a className="contact-email" href={`mailto:${siteConfig.email}`}>
-            {siteConfig.email} <ArrowUpRight size={20} />
-          </a>
+          <div className="contact-actions">
+            <a className="button button-lime" href={`mailto:${siteConfig.email}`}>
+              <Mail size={18} /> Send an email
+            </a>
+            <a
+              className="button button-outline-dark"
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Linkedin size={18} /> Connect on LinkedIn
+            </a>
+          </div>
         </div>
 
         <div className="contact-details">
+          <a href={`mailto:${siteConfig.email}`}>
+            <Mail size={18} />
+            <span><small>Email</small>{siteConfig.email}</span>
+          </a>
           <a href={`tel:${siteConfig.phone.replaceAll(" ", "")}`}>
-            <Phone size={17} /><span><small>Phone</small>{siteConfig.phone}</span>
+            <Phone size={18} />
+            <span><small>Phone</small>{siteConfig.phone}</span>
           </a>
           <div>
-            <MapPin size={17} /><span><small>Based in</small>{siteConfig.location}</span>
+            <MapPin size={18} />
+            <span><small>Based in</small>{siteConfig.location}</span>
           </div>
-          <a href={`mailto:${siteConfig.email}`}>
-            <Mail size={17} /><span><small>Email</small>Start a conversation</span>
-          </a>
         </div>
       </motion.div>
 
       <footer className="section-shell site-footer">
-        <a href="#home" className="wordmark">{siteConfig.name}<span>.</span></a>
-        <p>I love the Art</p>
-        <p className="growthlabs-credit">
-          <a href="https://neurerohan.com.np/" target="_blank" rel="noopener noreferrer">
-            With GrowthLabs - Best Digital Marketing in Nepal
-          </a>
-        </p>
-        <div className="social-links">
-          {socialLinks.map((link) => {
-            const Icon = socialIconMap[link.icon];
-            return (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
-                <Icon size={17} />
-              </a>
-            );
-          })}
-        </div>
+        <a className="brand brand-footer" href="#home">
+          <span className="brand-mark">{siteConfig.initials}</span>
+          <span className="brand-copy">
+            <strong>{siteConfig.name}</strong>
+            <small>{siteConfig.title}</small>
+          </span>
+        </a>
+        <p>Strategy · Performance · Insight</p>
         <p>© {new Date().getFullYear()} {siteConfig.name}</p>
       </footer>
     </section>

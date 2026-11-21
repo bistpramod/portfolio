@@ -1,92 +1,60 @@
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "../data/content";
-import { useScrollSpy } from "../hooks/useTypewriter";
-
-const sectionIds = ["home", "portfolio", "services", "about", "contact"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() =>
-    document.documentElement.classList.contains("dark"),
-  );
-  const activeSection = useScrollSpy(sectionIds);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("portfolio-theme");
-    const shouldUseDark = savedTheme === "dark";
-    setIsDark(shouldUseDark);
-    document.documentElement.classList.toggle("dark", shouldUseDark);
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", shouldUseDark ? "#100e17" : "#ffffff");
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = !isDark;
-    setIsDark(nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme);
-    window.localStorage.setItem("portfolio-theme", nextTheme ? "dark" : "light");
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", nextTheme ? "#100e17" : "#ffffff");
-  };
+    document.body.classList.toggle("menu-open", isOpen);
+    return () => document.body.classList.remove("menu-open");
+  }, [isOpen]);
 
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Primary navigation">
-        <a href="#home" className="wordmark" aria-label="Pramod Bist, home">
-          {siteConfig.name}<span>.</span>
+        <a className="brand" href="#home" aria-label="Pramod Bist, home">
+          <span className="brand-mark">{siteConfig.initials}</span>
+          <span className="brand-copy">
+            <strong>{siteConfig.name}</strong>
+            <small>Digital marketer</small>
+          </span>
         </a>
 
+        <div className="nav-desktop">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+
         <div className="nav-actions">
-          <ul className="desktop-nav">
-            {navLinks.map((link) => {
-              const id = link.href.slice(1);
-              return (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className={activeSection === id ? "active" : ""}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-
+          <a className="nav-contact" href={`mailto:${siteConfig.email}`}>
+            <Mail size={16} /> Let&apos;s talk
+          </a>
           <button
+            className="menu-toggle"
             type="button"
-            className="icon-button"
-            onClick={toggleTheme}
-            aria-label={isDark ? "Use light theme" : "Use dark theme"}
-          >
-            {isDark ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
-
-          <button
-            type="button"
-            className="icon-button menu-button"
-            onClick={() => setIsOpen((open) => !open)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-label={isOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={isOpen}
+            onClick={() => setIsOpen((current) => !current)}
           >
-            {isOpen ? <X size={19} /> : <Menu size={19} />}
+            {isOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
         </div>
       </nav>
 
-      {isOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
+      <div className={`mobile-menu ${isOpen ? "is-open" : ""}`}>
+        <nav aria-label="Mobile navigation">
+          {navLinks.map((link, index) => (
             <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+              <span>0{index + 1}</span>
               {link.label}
-              <span aria-hidden="true">↘</span>
             </a>
           ))}
         </nav>
-      )}
+      </div>
     </header>
   );
 }
