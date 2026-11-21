@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Pramod Bist",
   initials: "PB",
-  title: "Digital Marketing Executive",
+  title: "Digital Marketer",
   email: "bistpramod01@gmail.com",
   phone: "+977 9848979255",
   location: "Nepal",
@@ -17,29 +17,38 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const experience = [
+export const experienceAreas = [
   {
-    role: "Digital Marketing Executive",
-    period: "Jan 2025 — Oct 2026",
-    summary:
-      "Owned day-to-day campaign execution and performance improvement across paid media, search and analytics.",
-    responsibilities: [
-      "Planned, monitored and optimized Google Ads and Meta Ads campaigns, with a focus on targeting, messaging and campaign performance.",
-      "Conducted keyword research and aligned ads, search intent and landing pages through SEM/PPC optimization.",
-      "Supported on-page SEO and content strategy using Google Search Console to review organic search performance.",
-      "Used GA4, Google Tag Manager and conversion tracking to strengthen campaign measurement and reporting.",
-      "Reviewed marketing performance and conversion journeys to identify CRO opportunities.",
+    title: "Campaign work",
+    description:
+      "Practical experience supporting and improving paid campaigns across Google Ads and Meta Ads.",
+    details: [
+      "Campaign planning and setup",
+      "Audience targeting and messaging",
+      "Performance monitoring",
+      "SEM / PPC optimization",
     ],
   },
   {
-    role: "Digital Marketing Associate",
-    period: "Aug 2024 — Jan 2025",
-    summary:
-      "Built a practical foundation across campaign support, reporting, keyword research and content coordination.",
-    responsibilities: [
-      "Assisted with Google Ads, SEO and social media marketing activities, including keyword research and content coordination.",
-      "Supported campaign management, performance monitoring and the preparation of digital marketing reports.",
-      "Contributed to on-page SEO and content updates aligned with audience needs and search relevance.",
+    title: "Measurement & reporting",
+    description:
+      "Experience using analytics and tracking tools to understand campaign activity and prepare clearer reports.",
+    details: [
+      "GA4 reporting",
+      "Google Tag Manager",
+      "Conversion tracking",
+      "Looker Studio dashboards",
+    ],
+  },
+  {
+    title: "Search & content basics",
+    description:
+      "Working knowledge of keyword research, on-page updates and content coordination while continuing to develop deeper SEO skills.",
+    details: [
+      "Keyword research",
+      "On-page fundamentals",
+      "Search Console",
+      "Content updates",
     ],
   },
 ];
@@ -76,17 +85,17 @@ export const expertise = [
     tone: "blue",
   },
   {
-    eyebrow: "Organic growth",
-    title: "SEO & content",
+    eyebrow: "Developing skill",
+    title: "Search basics",
     description:
-      "Connecting search intent, technical foundations and useful content to improve organic visibility.",
+      "A practical foundation in search and content work that I am actively continuing to improve.",
     skills: [
-      "Technical SEO",
-      "On-page SEO",
-      "Local SEO",
       "Keyword research",
-      "Content strategy",
-      "Ahrefs & Semrush",
+      "On-page fundamentals",
+      "Search Console",
+      "Content updates",
+      "Ahrefs",
+      "Semrush",
     ],
     tone: "orange",
   },

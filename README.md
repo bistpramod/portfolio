@@ -1,6 +1,6 @@
 # Pramod Bist — Digital Marketing Portfolio
 
-A responsive personal portfolio focused on Pramod's digital marketing experience, paid media expertise, analytics toolkit, SEO knowledge and education.
+A responsive personal portfolio focused on Pramod's practical digital marketing experience, paid media work, analytics toolkit, search fundamentals and education.
 
 ## Stack
 

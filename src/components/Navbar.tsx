@@ -47,9 +47,8 @@ export default function Navbar() {
 
       <div className={`mobile-menu ${isOpen ? "is-open" : ""}`}>
         <nav aria-label="Mobile navigation">
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
-              <span>0{index + 1}</span>
               {link.label}
             </a>
           ))}

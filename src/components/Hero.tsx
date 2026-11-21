@@ -48,12 +48,12 @@ export default function Hero() {
 
           <div className="hero-facts" aria-label="Career highlights">
             <div>
-              <strong>2.5+</strong>
-              <span>years in digital marketing</span>
+              <strong>Paid media</strong>
+              <span>Google, Meta and TikTok platforms</span>
             </div>
             <div>
-              <strong>Paid + organic</strong>
-              <span>full-funnel perspective</span>
+              <strong>Measurement</strong>
+              <span>GA4, GTM and reporting tools</span>
             </div>
           </div>
         </motion.div>
@@ -95,24 +95,24 @@ export default function Hero() {
                 <i className="channel-line line-blue" />
               </div>
               <div>
-                <span>Organic search</span>
-                <strong>Build relevance</strong>
+                <span>Measurement</span>
+                <strong>Connect the results</strong>
                 <i className="channel-line line-orange" />
               </div>
             </div>
 
             <div className="board-footer">
               <div>
-                <span>01</span>
-                <p>Track what matters</p>
+                <span>Track</span>
+                <p>What matters</p>
               </div>
               <div>
-                <span>02</span>
-                <p>Read the signals</p>
+                <span>Read</span>
+                <p>The signals</p>
               </div>
               <div>
-                <span>03</span>
-                <p>Improve the journey</p>
+                <span>Improve</span>
+                <p>The journey</p>
               </div>
             </div>
           </div>

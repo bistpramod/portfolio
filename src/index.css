@@ -689,50 +689,59 @@ a:focus-visible {
 }
 
 .experience-list {
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .experience-card {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr);
-  gap: clamp(42px, 7vw, 92px);
-  padding-block: clamp(50px, 6vw, 82px);
-  border-bottom: 1px solid var(--line);
-}
-
-.experience-meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  min-height: 450px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #f7f8f2;
+  transition: transform 220ms ease, border-color 220ms ease;
 }
 
-.experience-index {
+.experience-card:hover {
+  border-color: #aeb2a7;
+  transform: translateY(-5px);
+}
+
+.experience-icon {
   display: grid;
   place-items: center;
   width: 54px;
   height: 54px;
-  border-radius: 50%;
+  margin-bottom: 46px;
+  border-radius: 14px;
   background: var(--ink);
   color: var(--lime);
-  font-family: var(--font-mono);
-  font-size: 13px;
 }
 
-.experience-meta p {
-  margin: 0;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.experience-card:nth-child(2) .experience-icon {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.experience-card:nth-child(3) .experience-icon {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+.experience-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .experience-content h3 {
   margin: 0;
-  font-size: clamp(2rem, 3.7vw, 3.75rem);
+  font-size: clamp(1.8rem, 2.8vw, 2.7rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.04;
   letter-spacing: -0.055em;
 }
 
@@ -746,10 +755,10 @@ a:focus-visible {
 
 .experience-content ul {
   display: grid;
-  gap: 15px;
-  max-width: 850px;
-  margin: 32px 0 0;
+  gap: 11px;
+  margin: auto 0 0;
   padding: 0;
+  padding-top: 34px;
   list-style: none;
 }
 
@@ -758,6 +767,7 @@ a:focus-visible {
   grid-template-columns: 22px 1fr;
   gap: 11px;
   color: #33372f;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -1233,8 +1243,7 @@ a:focus-visible {
   }
 
   .mobile-menu a {
-    display: grid;
-    grid-template-columns: 44px 1fr;
+    display: block;
     align-items: center;
     padding: 22px 0;
     border-bottom: 1px solid var(--line);
@@ -1243,15 +1252,7 @@ a:focus-visible {
     letter-spacing: -0.04em;
   }
 
-  .mobile-menu a span {
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0;
-  }
-
   .section-heading,
-  .experience-card,
   .toolkit,
   .contact-panel {
     grid-template-columns: 1fr;
@@ -1266,13 +1267,12 @@ a:focus-visible {
     max-width: 620px;
   }
 
-  .experience-card {
-    gap: 26px;
+  .experience-list {
+    grid-template-columns: 1fr;
   }
 
-  .experience-meta {
-    flex-direction: row;
-    align-items: center;
+  .experience-card {
+    min-height: 0;
   }
 
   .toolkit {
@@ -1363,12 +1363,6 @@ a:focus-visible {
 
   .floating-email {
     right: 14px;
-  }
-
-  .experience-meta {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
   }
 
   .expertise-card {
