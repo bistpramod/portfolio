@@ -1071,16 +1071,6 @@ a:focus-visible {
   background: #e4ff79;
 }
 
-.button-outline-dark {
-  border-color: #575c54;
-  color: var(--white);
-}
-
-.button-outline-dark:hover {
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.06);
-}
-
 .contact-details {
   align-self: end;
   border-top: 1px solid #3b3f38;

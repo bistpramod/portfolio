@@ -1,4 +1,4 @@
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "../data/content";
 
@@ -22,14 +22,6 @@ export default function Contact() {
           <div className="contact-actions">
             <a className="button button-lime" href={`mailto:${siteConfig.email}`}>
               <Mail size={18} /> Send an email
-            </a>
-            <a
-              className="button button-outline-dark"
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Linkedin size={18} /> Connect on LinkedIn
             </a>
           </div>
         </div>
